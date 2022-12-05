@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ITurnos } from '../interfaces/Iturnos.Interfaces';
+import { IServicios, ITurnos } from '../interfaces/Iturnos.Interfaces';
 
 
 @Injectable({
@@ -11,6 +11,10 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getGenerarTurnos() {
-    return this.http.post<ITurnos[]>('http://localhost:3000/api/v1/turnos','')
+    return this.http.post<ITurnos[]>('http://localhost:3000/api/v1/turnos', '')
+  }
+
+  getServicios() {
+    return this.http.get<IServicios[]>('http://localhost:3000/api/v1/turnos/servicios')
   }
 }

@@ -13,3 +13,8 @@ export interface IFormulario {
     fechaFinal: string
     servicio: number
 }
+
+export interface IServicios {
+    idServicio: number
+    nombreServicio: string
+}

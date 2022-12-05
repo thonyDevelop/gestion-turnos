@@ -14,8 +14,10 @@ export class AppComponent {
   title = 'gestion-turnos';
   dataFormulario: IFormulario = { fechaInicial: '', fechaFinal: '', servicio: 0 }
   turnosGenerados: ITurnos[] = []
-  constructor(private dialog: MatDialog,
-    private api: ApiService) { }
+  constructor(
+    private dialog: MatDialog,
+    private api: ApiService
+  ) { }
   openDialog() {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '30%'

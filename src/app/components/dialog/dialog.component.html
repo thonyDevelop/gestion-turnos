@@ -15,8 +15,7 @@
       <mat-label>Servicio</mat-label>
       <mat-select formControlName="servicio" placeholder="servicio">
         <mat-option>Clear</mat-option>
-        <mat-option value="1">Servicio 1</mat-option>
-        <mat-option value="2">Servicios 2</mat-option>
+        <mat-option *ngFor="let item of servicios" [value]="item.idServicio" >{{item.nombreServicio}}</mat-option>
       </mat-select>
     </mat-form-field>
   </form>
