@@ -23,6 +23,7 @@ import { MatTableModule } from '@angular/material/table';
 import { TableComponent } from './components/table/table.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { MatSortModule } from '@angular/material/sort';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

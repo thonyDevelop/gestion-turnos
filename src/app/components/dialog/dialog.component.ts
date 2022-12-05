@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-dialog',
@@ -11,8 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class DialogComponent {
   turnosForm!: FormGroup;
   constructor(
-    private formBuilder: FormBuilder,
-    private api: ApiService
+    private formBuilder: FormBuilder
   ) { }
   ngOnInit(): void {
     this.turnosForm = this.formBuilder.group({
@@ -22,17 +20,4 @@ export class DialogComponent {
     })
   }
 
-  generarTurnos() {
-    if (this.turnosForm.valid) {
-      this.api.getGenerarTurnos().subscribe({
-        next: (res) => {
-          console.log(res)
-
-        },
-        error: (err) => {
-          alert('ocurrio un error')
-        }
-      })
-    }
-  }
 }

@@ -7,3 +7,9 @@ export interface ITurnos {
     horaFin: string
     estado: string
 }
+
+export interface IFormulario {
+    fechaInicial: string
+    fechaFinal: string
+    servicio: number
+}
