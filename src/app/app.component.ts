@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { IFormulario, ITurnos } from './interfaces/Iturnos.Interfaces';
 import { ApiService } from './services/api.service';
+import { formatearFecha } from './utils';
 
 
 @Component({
@@ -31,7 +32,11 @@ export class AppComponent {
 
   generarTurnos(data: IFormulario) {
     if (data.fechaInicial != null && data.fechaFinal != null && data.servicio != null) {
-      this.api.getGenerarTurnos().subscribe({
+
+      data.fechaInicial = formatearFecha(data.fechaInicial)
+      data.fechaFinal = formatearFecha(data.fechaFinal)
+
+      this.api.getGenerarTurnos(data).subscribe({
         next: (res) => {
           this.turnosGenerados = res
         },

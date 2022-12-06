@@ -1,5 +1,5 @@
 table {
-    width: 80%;
+    width: 100%;
 }
 
 .mat-mdc-form-field {
@@ -10,4 +10,10 @@ table {
 td,
 th {
     width: 25%;
+}
+
+.container {
+    padding-top: 1%;
+    width: 80%;
+    margin: 0 auto;
 }
